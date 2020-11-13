@@ -1,0 +1,154 @@
+<archetype-descriptor
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
+                            http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="quickstart">
+
+    <requiredProperties>
+        <requiredProperty key="version">
+            <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="gitignore">
+            <defaultValue>.gitignore</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <fileSets>
+        <!-- API -->
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>api</directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>api/src/main/resources</directory>
+            <includes>
+                <include>config.yml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>api/src/main/resources/META-INF</directory>
+            <includes>
+                <include>beans.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>api/src/main/java/__packageInPathFormat__/api</directory>
+            <includes>
+                <include>RestService.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>api/src/main/java/__packageInPathFormat__/api/resources</directory>
+            <includes>
+                <include>SampleResource.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>api/src/main/java/__packageInPathFormat__/api/mappers</directory>
+        </fileSet>
+
+        <!-- SERVICES -->
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>business-logic</directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>business-logic/src/main/resources/META-INF</directory>
+            <includes>
+                <include>beans.xml</include>
+            </includes>
+        </fileSet>
+
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>entities/src/main/java/__packageInPathFormat__/entities</directory>
+            <includes>
+                <include>BaseEntity.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>business-logic/src/main/java/__packageInPathFormat__/producers</directory>
+            <includes>
+                <include>PersistenceProducer.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>business-logic/src/main/java/__packageInPathFormat__/services</directory>
+            <includes>
+                <include>SampleService.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>business-logic/src/main/java/__packageInPathFormat__/services/impl</directory>
+            <includes>
+                <include>SampleServiceImpl.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>business-logic/src/main/java/__packageInPathFormat__/mappers</directory>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>business-logic/src/main/java/__packageInPathFormat__/utils</directory>
+        </fileSet>
+
+        <!-- PERSISTENCE -->
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>entities</directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>entities/src/main/resources/META-INF</directory>
+            <includes>
+                <include>persistence.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>entities/src/main/java/__packageInPathFormat__/entities</directory>
+            <includes>
+                <include>BaseEntity.java</include>
+                <include>SampleEntity.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>entities/src/main/resources/liquibase</directory>
+            <includes>
+                <include>liquibase.properties</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>entities/src/main/resources/db</directory>
+            <includes>
+                <include>db.changelog-master.xml</include>
+                <include>db.changelog-sample.xml</include>
+            </includes>
+        </fileSet>
+
+        <!-- OTHER -->
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory />
+            <includes>
+                <include>Dockerfile</include>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory />
+            <includes>
+                <include>__gitignore__</include>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory />
+            <includes>
+                <include>.travis.yml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</archetype-descriptor>
