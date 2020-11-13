@@ -1,20 +1,7 @@
 #set($hash = '#')
 ${hash} ${artifactId}
 
-${hash}${hash}${hash} Run from IDE
-
-```bash
-mvn clean package
-```
-
-Run database in docker (change `<PORT>`):
-```bash
-docker run -d -p <PORT>:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=${artifactId} --name ${artifactId}-db postgres:12
-```
-
-Now run service from your IDE.
-
-${hash}${hash}${hash} Run locally on Docker
+${hash}${hash}${hash} Development
 
 ```bash
 mvn clean package
