@@ -30,14 +30,14 @@ after_success:
 
 notifications:
   email: false
-    slack:
-      rooms:
-        - mydnacodes:juVpZCZ9ITTxUY5ggVNXwVm0#travis-ci
-      on_success: always
-      on_failure: always
-      template:
-        - "Repository %{repository_slug} %{result} build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch %{branch}."
-        - "Commit author: %{author}"
-        - "Commit message: %{commit_message}"
-        - "Execution time: %{duration}"
-        - "Message: %{message}"
+  slack:
+    rooms:
+      - mydnacodes:juVpZCZ9ITTxUY5ggVNXwVm0#travis-ci
+    on_success: always
+    on_failure: always
+    template:
+      - "Repository %{repository_slug} %{result} build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch %{branch}."
+      - "Commit author: %{author}"
+      - "Commit message: %{commit_message}"
+      - "Execution time: %{duration}"
+      - "Message: %{message}"
