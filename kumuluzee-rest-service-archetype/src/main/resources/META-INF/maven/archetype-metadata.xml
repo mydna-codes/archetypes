@@ -49,6 +49,12 @@
         <fileSet filtered="true" encoding="UTF-8">
             <directory>api/src/main/java/__packageInPathFormat__/api/mappers</directory>
         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>api/src/main/java/__packageInPathFormat__/api/mappers</directory>
+            <includes>
+                <include>RestExceptionMapper.java</include>
+            </includes>
+        </fileSet>
 
         <!-- SERVICES -->
         <fileSet filtered="true" encoding="UTF-8">
@@ -63,7 +69,6 @@
                 <include>beans.xml</include>
             </includes>
         </fileSet>
-
         <fileSet filtered="true" encoding="UTF-8">
             <directory>entities/src/main/java/__packageInPathFormat__/entities</directory>
             <includes>
@@ -90,6 +95,9 @@
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
             <directory>business-logic/src/main/java/__packageInPathFormat__/mappers</directory>
+            <includes>
+                <include>BaseMapper.java</include>
+            </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
             <directory>business-logic/src/main/java/__packageInPathFormat__/utils</directory>
@@ -127,6 +135,23 @@
                 <include>db.changelog-master.xml</include>
                 <include>db.changelog-sample.xml</include>
             </includes>
+        </fileSet>
+
+        <!-- LIB -->
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>lib</directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>lib/src/main/java/__packageInPathFormat__/lib</directory>
+            <includes>
+                <include>BaseType.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>lib/src/main/resources</directory>
         </fileSet>
 
         <!-- OTHER -->
