@@ -1,41 +1,30 @@
 #set($hash = '#')
 ${hash} ${artifactId}
 
-${hash}${hash}${hash} Run from IDE
-
-```bash
-mvn clean package
+${hash}${hash}${hash} Library
+```xml
+<dependency>
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}-lib</artifactId>
+    <version>${${artifactId}.version}</version>
+</dependency>
 ```
 
-Run database in docker (change `<PORT>`):
+${hash}${hash}${hash} Docker
+
+*Note: This service requires DB.*
+
+Pull docker image:
 ```bash
-docker run -d -p <PORT>:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=${artifactId} --name ${artifactId}-db postgres:12
+docker pull mydnacodes/${artifactId}
 ```
 
-Now run service from your IDE.
-
-${hash}${hash}${hash} Run locally on Docker
-
+Run docker image:
 ```bash
-mvn clean package
-```
-
-Build docker image:
-```bash
-docker build -t ${artifactId} .
-```
-
-Create docker network:
-```bash
-docker network create ${artifactId}-network
-```
-
-Run database in docker:
-```bash
-docker run -d -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=${artifactId} --network ${artifactId}-network --name ${artifactId}-db postgres:12
-```
-
-Run docker image (change `<PORT>`):
-```bash
-docker run -d -p <PORT>:8080 -e KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://${artifactId}-db:5432/${artifactId} -e KUMULUZEE_DATASOURCES0_USERNAME=postgres -e KUMULUZEE_DATASOURCES0_PASSWORD=postgres --network ${artifactId}-network --name ${artifactId}-service ${artifactId}
+docker run -d -p <PORT>:8080 
+    -e KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://<DB_HOST>:<DB_PORT>/${artifactId}
+    -e KUMULUZEE_DATASOURCES0_USERNAME=<DB_USERNAME> 
+    -e KUMULUZEE_DATASOURCES0_PASSWORD=<DB_PASSWORD> 
+    --name ${artifactId}-service
+    mydnacodes/${artifactId}
 ```

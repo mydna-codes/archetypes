@@ -4,6 +4,9 @@
 
         <non-jta-data-source>jdbc/${artifactId}-db</non-jta-data-source>
 
+        <class>${package}.entities.BaseEntity</class>
+        <class>${package}.entities.SampleEntity</class>
+
         <properties>
             <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
             <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
