@@ -16,7 +16,7 @@ ${hash}${hash}${hash} Docker
 
 Pull docker image:
 ```bash
-docker pull ${groupId}/${artifactId}
+docker pull mydnacodes/${artifactId}
 ```
 
 Run docker image:
@@ -26,5 +26,5 @@ docker run -d -p <PORT>:8080
     -e KUMULUZEE_DATASOURCES0_USERNAME=<DB_USERNAME> 
     -e KUMULUZEE_DATASOURCES0_PASSWORD=<DB_PASSWORD> 
     --name ${artifactId}-service
-    ${groupId}/${artifactId}
+    mydnacodes/${artifactId}
 ```
