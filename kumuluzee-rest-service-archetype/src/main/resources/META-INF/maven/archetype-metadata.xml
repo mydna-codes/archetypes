@@ -155,6 +155,12 @@
         </fileSet>
 
         <!-- OTHER -->
+        <fileSet filtered="false" encoding="UTF-8">
+            <directory>.ci</directory>
+            <includes>
+                <include>settings.xml</include>
+            </includes>
+        </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
             <directory />
             <includes>

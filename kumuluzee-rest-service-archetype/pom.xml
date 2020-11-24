@@ -6,7 +6,7 @@
 
     <groupId>codes.mydna.archetype</groupId>
     <artifactId>rest-service</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <build>
