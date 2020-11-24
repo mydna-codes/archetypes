@@ -1,13 +1,15 @@
-language: java
-dist: trusty
-
-jdk:
-  - openjdk13
+os: linux
+dist: focal
 
 branches:
   only:
     - master
     - prod
+
+language: java
+
+jdk:
+  - openjdk13
 
 cache:
   directories:
@@ -22,7 +24,7 @@ notifications:
   email: false
   slack:
     rooms:
-      - mydnacodes:juVpZCZ9ITTxUY5ggVNXwVm0#travis-ci
+      - mydnacodes:2aXZWSXfUxDEKC64jl9rugZe#travis-ci
     on_success: always
     on_failure: always
     template:

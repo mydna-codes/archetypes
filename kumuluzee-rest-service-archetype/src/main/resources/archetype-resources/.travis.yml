@@ -1,18 +1,18 @@
-sudo: required
+os: linux
+dist: focal
 
 env:
   - IMAGE_VERSION="latest"
-
-services:
-  - docker
-
-language: java
-dist: trusty
 
 branches:
   only:
     - master
     - prod
+
+services:
+  - docker
+
+language: java
 
 jdk:
   - openjdk13
@@ -25,7 +25,7 @@ install: echo "Skipping installation..."
 
 script:
   - mvn clean package -DskipTests=true
-  - docker build -t "$DOCKER_IMAGE_NAME":"IMAGE_VERSION" .
+  - docker build -t "$DOCKER_IMAGE_NAME":"$IMAGE_VERSION" .
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
@@ -36,7 +36,7 @@ notifications:
   email: false
   slack:
     rooms:
-      - mydnacodes:juVpZCZ9ITTxUY5ggVNXwVm0#travis-ci
+      - mydnacodes:2aXZWSXfUxDEKC64jl9rugZe#travis-ci
     on_success: always
     on_failure: always
     template:
