@@ -1,16 +1,10 @@
 os: linux
 dist: focal
 
-env:
-  - IMAGE_VERSION="latest"
-
 branches:
   only:
     - master
     - prod
-
-services:
-  - docker
 
 language: java
 
@@ -24,13 +18,7 @@ cache:
 install: echo "Skipping installation..."
 
 script:
-  - mvn clean package -DskipTests=true
-  - docker build -t "$DOCKER_IMAGE_NAME":"$IMAGE_VERSION" .
-
-after_success:
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push "$DOCKER_IMAGE_NAME"
-  - mvn clean deploy -DskipTests=true --settings .ci/settings.xml -P lib
+  - mvn clean deploy -DskipTests=true --settings .ci/settings.xml
 
 notifications:
   email: false
