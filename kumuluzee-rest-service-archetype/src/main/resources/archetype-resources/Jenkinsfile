@@ -83,6 +83,7 @@ pipeline {
                         environment = deploymentConfig.environments.prod
                     } else {
                         environment = deploymentConfig.environments.dev
+                        envSuffix   = "-test"
                     }
 
                     sh """ \
