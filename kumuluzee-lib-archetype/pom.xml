@@ -6,7 +6,7 @@
 
     <groupId>codes.mydna.archetype</groupId>
     <artifactId>lib</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <build>
