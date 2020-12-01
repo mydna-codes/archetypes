@@ -35,7 +35,8 @@ pipeline {
         }
         stage("Clean maven packages") {
             steps {
-                sh "mvn clean"
+                sh "mvn -f kumuluzee-lib-archetype/pom.xml clean"
+                sh "mvn -f kumuluzee-rest-service-archetype/pom.xml clean"
             }
         }
     }
