@@ -161,7 +161,7 @@
         </fileSet>
 
         <!-- OTHER -->
-        <fileSet filtered="false" encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
             <directory>.ci</directory>
             <includes>
                 <include>deployment-config.yaml</include>
