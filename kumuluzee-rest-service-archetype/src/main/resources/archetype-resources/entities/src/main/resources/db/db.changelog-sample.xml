@@ -16,8 +16,12 @@
                              unique="true"
                              nullable="false"/>
             </column>
-            <column name="created" type="timestamp"/>
-            <column name="last_modified" type="timestamp"/>
+            <column name="created" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified" type="timestamp">
+                <constraints nullable="false"
+            </column>
             <!-- Table specific -->
             <column name="name" type="varchar(32)"/>
             <column name="description" type="varchar(64)"/>
