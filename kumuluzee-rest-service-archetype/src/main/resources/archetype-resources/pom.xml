@@ -30,6 +30,7 @@
 
         <!-- mydnacodes -->
         <mydnacodes-rest-lib.version>1.0.2-SNAPSHOT</mydnacodes-rest-lib.version>
+        <kumuluzee-migrations.version>1.0.2-SNAPSHOT</kumuluzee-migrations.version>
     </properties>
 
     <dependencyManagement>
@@ -112,6 +113,13 @@
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${postgresql.version}</version>
+            </dependency>
+
+            <!-- KumuluzEE (Migrations - Liquibase) -->
+            <dependency>
+                <groupId>com.kumuluz.ee.migrations</groupId>
+                <artifactId>kumuluzee-migrations-liquibase</artifactId>
+                <version>${kumuluzee-migrations.version}</version>
             </dependency>
 
             <!-- mydnacodes -->

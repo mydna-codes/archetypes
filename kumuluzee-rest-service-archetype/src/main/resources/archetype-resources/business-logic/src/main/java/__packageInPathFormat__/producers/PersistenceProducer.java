@@ -1,7 +1,6 @@
 package ${package}.producers;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
@@ -13,7 +12,7 @@ public class PersistenceProducer {
     private EntityManager em;
 
     @Produces
-    @RequestScoped
+    @ApplicationScoped
     public EntityManager getEntityManager() {
         return em;
     }
