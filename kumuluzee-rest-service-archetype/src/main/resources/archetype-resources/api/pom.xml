@@ -62,7 +62,6 @@
     </dependencies>
 
     <build>
-        <finalName>${artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>com.kumuluz.ee</groupId>
@@ -72,7 +71,7 @@
                     <execution>
                         <id>package</id>
                         <goals>
-                            <goal>repackage</goal>
+                            <goal>copy-dependencies</goal>
                         </goals>
                     </execution>
                 </executions>
