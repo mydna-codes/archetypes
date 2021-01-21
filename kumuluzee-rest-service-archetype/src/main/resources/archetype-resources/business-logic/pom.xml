@@ -10,14 +10,14 @@
         <version>${version}</version>
     </parent>
 
-    <artifactId>business-logic</artifactId>
+    <artifactId>${artifactId}-business-logic</artifactId>
 
-    <name>business-logic</name>
+    <name>${artifactId}-business-logic</name>
 
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>entities</artifactId>
+            <artifactId>${artifactId}-entities</artifactId>
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
@@ -46,7 +46,7 @@
         </dependency>
 
         <dependency>
-            <groupId>codes.mydna</groupId>
+            <groupId>codes.mydna.rest</groupId>
             <artifactId>rest-lib</artifactId>
         </dependency>
     </dependencies>

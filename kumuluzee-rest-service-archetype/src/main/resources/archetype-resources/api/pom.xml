@@ -9,14 +9,14 @@
         <version>${version}</version>
     </parent>
 
-    <artifactId>api</artifactId>
+    <artifactId>${artifactId}-api</artifactId>
 
-    <name>api</name>
+    <name>${artifactId}-api</name>
 
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>business-logic</artifactId>
+            <artifactId>${artifactId}-business-logic</artifactId>
         </dependency>
 
         <dependency>

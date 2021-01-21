@@ -22,13 +22,16 @@
         <kumuluzee-openapi-mp.version>1.4.0</kumuluzee-openapi-mp.version>
         <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
         <kumuluzee-health.version>2.3.0</kumuluzee-health.version>
+        <kumuluzee-migrations.version>1.0.0</kumuluzee-migrations.version>
 
         <!-- PostgreSQL-->
         <postgresql.version>42.2.18</postgresql.version>
 
-        <!-- mydnacodes -->
-        <mydnacodes-rest-lib.version>1.0.2-SNAPSHOT</mydnacodes-rest-lib.version>
-        <kumuluzee-migrations.version>1.0.2-SNAPSHOT</kumuluzee-migrations.version>
+        <!-- MyDnaCodes -->
+        <mydnacodes-rest-lib.version>1.0.3-SNAPSHOT</mydnacodes-rest-lib.version>
+
+        <!-- Plugins -->
+        <liquibase.version>4.2.0</liquibase.version>
     </properties>
 
     <dependencyManagement>
@@ -36,12 +39,12 @@
             <!-- Internal modules -->
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>business-logic</artifactId>
+                <artifactId>${artifactId}-business-logic</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>entities</artifactId>
+                <artifactId>${artifactId}-entities</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
@@ -113,9 +116,9 @@
                 <version>${kumuluzee-migrations.version}</version>
             </dependency>
 
-            <!-- mydnacodes -->
+            <!-- MyDnaCodes -->
             <dependency>
-                <groupId>codes.mydna</groupId>
+                <groupId>codes.mydna.rest</groupId>
                 <artifactId>rest-lib</artifactId>
                 <version>${mydnacodes-rest-lib.version}</version>
             </dependency>
